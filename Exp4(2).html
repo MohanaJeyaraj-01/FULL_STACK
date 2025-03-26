@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+</head>
+<body>
+    <h1>Arithmetic Calculator</h1>
+    <input id="num1" type="number" placeholder="Enter first number">
+    <input id="num2" type="number" placeholder="Enter second number">
+    <button onclick="calculate()">Calculate</button>
+
+    <table border="1">
+        <tr>
+            <th>Number</th>
+            <th>Addition</th>
+            <th>Subtraction</th>
+            <th>Multiplication</th>
+            <th>Division</th>
+        </tr>
+        <tr>
+            <td id="Avalue">-</td>
+            <td id="add">-</td>
+            <td id="sub">-</td>
+            <td id="mult">-</td>
+            <td id="div">-</td>
+        </tr>
+        <tr>
+            <td id="Bvalue">-</td>
+        </tr>
+    </table>
+
+    <script>
+        function calculate() {
+            var a = document.getElementById("num1").value;
+            var b = document.getElementById("num2").value;
+
+            if (a === "" || b === "") {
+                alert("Please enter both numbers!");
+                return;
+            }
+
+            var Avalue = Number(a);
+            var Bvalue = Number(b);
+
+            // Perform calculations
+            var add = Avalue + Bvalue;
+            var sub = Avalue - Bvalue;
+            var mult = Avalue * Bvalue;
+            var div = Bvalue !== 0 ? (Avalue / Bvalue).toFixed(2) : "∞"; // Prevent division by zero
+
+            // Update table dynamically
+            document.getElementById("Avalue").innerHTML = Avalue;
+            document.getElementById("Bvalue").innerHTML = Bvalue;
+            document.getElementById("add").innerHTML = add;
+            document.getElementById("sub").innerHTML = sub;
+            document.getElementById("mult").innerHTML = mult;
+            document.getElementById("div").innerHTML = div;
+        }
+    </script>
+
+</body>
+</html>

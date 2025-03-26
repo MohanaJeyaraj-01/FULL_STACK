@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>even</title>
+</head>
+<body>
+    <h1>To check even or not</h1>
+    <input id="num"type="number">
+    <button onclick="checkeven()">Check</button>
+    <script>
+        function checkeven(){
+            var num = document.getElementById("num").value;
+            num =parseInt(num);
+            if(num%2 == 0){
+            window.alert("You entered even number!")
+            document.write(num + "is even")
+        } else{
+            console.log("Its a odd number")
+            document.write(num + "is odd")
+        }
+        }
+        </script>
+        
+    
+</body>
+</html>
